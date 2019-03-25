@@ -1,0 +1,23 @@
+{
+  "name": "deploy-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "NODE_ENV=development node server/watcher.js",
+    "release:develop": "pm2 startOrGracefulReload pm2.develop.config.js && pm2 save",
+    "release:test": "pm2 startOrGracefulReload pm2.test.config.js && pm2 save",
+    "release:prod": "pm2 startOrGracefulReload pm2.prod.config.js && pm2 save"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^2.1.2",
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.1.0"
+  }
+}
