@@ -1,10 +1,8 @@
-const {Branch} = require('../model/branch');
+const { Branch } = require('../model/branch');
 
 exports.getHosts = async (ctx) => {
-    Branch.findAll().then(branchs => {
-        console.log(branchs)
-    })
-    await ctx.success([1,2,3,4,5]);
+    let branches = await Branch.findAll();
+    await ctx.success(branches);
     // await ctx.error();
 };
 
